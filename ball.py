@@ -38,5 +38,7 @@ class Ball:
             game_world.remove_object(self)
         if group == 'grass:ball':
             self.stopped = True
+            game_world.remove_collision_object(self)
+            game_world.add_collision_pair('boy:ball', None, self)
         if group == 'zombie:ball':
             game_world.remove_object(self)
